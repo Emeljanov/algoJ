@@ -1,7 +1,6 @@
 package by.emel.anton.datecase;
 
 import java.time.LocalDate;
-import java.time.Month;
 
 public class DateCase {
     public String switchDate(LocalDate localDate) {
