@@ -1,9 +1,11 @@
 package by.emel.anton;
 
+import by.emel.anton.datecase.DateCase;
 import by.emel.anton.maxeven.MaxEven;
 import by.emel.anton.multiplication.Multiplication;
 import by.emel.anton.nok.Nok;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Runner {
@@ -15,7 +17,7 @@ public class Runner {
         boolean flag = true;
 
         while (flag) {
-            System.out.println("Enter NOK, MAXEVEN, MULTI or EXIT");
+            System.out.println("Enter NOK, MAXEVEN, MULTI, TIME or EXIT");
             String s = scanner.nextLine();
             if (s.equals("NOK")) {
                 System.out.println("enter first number");
@@ -38,6 +40,11 @@ public class Runner {
                 System.out.println("enter number for multi");
                 int a = Integer.parseInt(scanner.nextLine().trim());
                 System.out.println(new Multiplication().multiplicate(a));
+            }
+            else if(s.equals("TIME")) {
+                System.out.println("time of the year");
+                LocalDate localDate = LocalDate.parse(scanner.nextLine().trim());
+                System.out.println(new DateCase().switchDate(localDate));
             }
         }
 
