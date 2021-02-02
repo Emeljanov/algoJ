@@ -4,6 +4,7 @@ import by.emel.anton.datecase.DateCase;
 import by.emel.anton.maxeven.MaxEven;
 import by.emel.anton.multiplication.Multiplication;
 import by.emel.anton.nok.Nok;
+import by.emel.anton.palindrome.Palindrome;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -17,7 +18,7 @@ public class Runner {
         boolean flag = true;
 
         while (flag) {
-            System.out.println("Enter NOK, MAXEVEN, MULTI, TIME or EXIT");
+            System.out.println("Enter NOK, MAXEVEN, MULTI, TIME, PALINDROM or EXIT");
             String s = scanner.nextLine();
             if (s.equals("NOK")) {
                 System.out.println("enter first number");
@@ -45,6 +46,11 @@ public class Runner {
                 System.out.println("time of the year");
                 LocalDate localDate = LocalDate.parse(scanner.nextLine().trim());
                 System.out.println(new DateCase().switchDate(localDate));
+            }
+            else if(s.equals("PALINDROM")) {
+                System.out.println("PALINDROM");
+                String pali = scanner.nextLine().trim();
+                System.out.println(Palindrome.isPalindrome(pali));
             }
         }
 
